@@ -10,18 +10,18 @@ return array(
     'ctrl' => array(
         'title' => 'LLL:EXT:felogin_bruteforce_protection/Resources/Private/Language/locallang_db.xml' .
             ':tx_feloginbruteforceprotection_domain_model_entry',
-        'label' => 'identifier',
+        'label' => 'human_readable_identifier',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'dividers2tabs' => true,
         'searchFields' => 'identifier,failures,',
-        'iconfile' => ExtensionManagementUtility::extRelPath('felogin_bruteforce_protection') . 'Resources/Public/Icons/TCA/Entry.gif'
+        'iconfile' => ExtensionManagementUtility::extRelPath('felogin_bruteforce_protection') . 'Resources/Public/Icons/TCA/Entry.png'
     ),
     'interface' => array(
         'showRecordFieldList' => 'identifier,failures',
     ),
     'types' => array(
-        '1' => array('showitem' => 'identifier, failures'),
+        '1' => array('showitem' => 'human_readable_identifier, identifier, failures'),
     ),
     'palettes' => array(
         '1' => array('showitem' => ''),
@@ -46,13 +46,25 @@ return array(
             )
         ),
         'identifier' => array(
-            'exclude' => 0,
+            'exclude' => 1,
             'label' => 'LLL:EXT:felogin_bruteforce_protection/Resources/Private/Language/locallang_db.xml' .
                 ':tx_feloginbruteforceprotection_domain_model_entry.identifier',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required'
+                'eval' => 'trim,required',
+                'readOnly' => true
+            ),
+        ),
+        'human_readable_identifier' => array(
+            'exclude' => 1,
+            'label' => 'LLL:EXT:felogin_bruteforce_protection/Resources/Private/Language/locallang_db.xml' .
+                ':tx_feloginbruteforceprotection_domain_model_entry.human_readable_identifier',
+            'config' => array(
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim,required',
+                'readOnly' => true
             ),
         ),
         'failures' => array(
@@ -62,7 +74,8 @@ return array(
             'config' => array(
                 'type' => 'input',
                 'size' => 4,
-                'eval' => 'int,required'
+                'eval' => 'int,required',
+                'readOnly' => true
             ),
         ),
     ),

@@ -8,8 +8,9 @@
     <data type="array">
         <languageKey index="default" type="array">
 
-            <label index="tx_feloginbruteforceprotection_domain_model_entry">Entry</label>
+            <label index="tx_feloginbruteforceprotection_domain_model_entry">Brute Force Protection Entry</label>
             <label index="tx_feloginbruteforceprotection_domain_model_entry.identifier">Identifier</label>
+            <label index="tx_feloginbruteforceprotection_domain_model_entry.human_readable_identifier">User name / IP address</label>
             <label index="tx_feloginbruteforceprotection_domain_model_entry.failures">Failures</label>
 
         </languageKey>

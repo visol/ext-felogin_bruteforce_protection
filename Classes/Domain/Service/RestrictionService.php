@@ -59,6 +59,11 @@ class RestrictionService
     protected $clientIdentifier;
 
     /**
+     * @var string
+     */
+    protected $humanReadableClientIdentifier;
+
+    /**
      * @var \Aoe\FeloginBruteforceProtection\System\Configuration
      * @inject
      */
@@ -244,6 +249,7 @@ class RestrictionService
         $this->entry->setCrdate(time());
         $this->entry->setTstamp(time());
         $this->entry->setIdentifier($this->getClientIdentifier());
+        $this->entry->setHumanReadableIdentifier($this->getHumanReadableClientIdentifier());
         $this->entryRepository->add($this->entry);
         $this->persistenceManager->persistAll();
         $this->clientRestricted = false;
@@ -355,6 +361,19 @@ class RestrictionService
             );
         }
         return $this->clientIdentifier;
+    }
+
+    /**
+     * Returns the client identifier based on the clients IP address.
+     *
+     * @return string
+     */
+    private function getHumanReadableClientIdentifier()
+    {
+        if (false === isset($this->humanReadableClientIdentifier)) {
+            $this->humanReadableClientIdentifier = $this->restrictionIdentifier->getIdentifierValue();
+        }
+        return $this->humanReadableClientIdentifier;
     }
 
     /**

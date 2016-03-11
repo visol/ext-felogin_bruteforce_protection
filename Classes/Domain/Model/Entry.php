@@ -54,6 +54,12 @@ class Entry extends AbstractEntity
     protected $identifier;
 
     /**
+     * @var string
+     * @validate NotEmpty
+     */
+    protected $humanReadableIdentifier;
+
+    /**
      * @var integer
      * @validate NotEmpty
      */
@@ -106,6 +112,22 @@ class Entry extends AbstractEntity
     public function setIdentifier($identifier)
     {
         $this->identifier = $identifier;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHumanReadableIdentifier()
+    {
+        return $this->humanReadableIdentifier;
+    }
+
+    /**
+     * @param string $humanReadableIdentifier
+     */
+    public function setHumanReadableIdentifier($humanReadableIdentifier)
+    {
+        $this->humanReadableIdentifier = $humanReadableIdentifier;
     }
 
     /**
