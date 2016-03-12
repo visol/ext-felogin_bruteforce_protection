@@ -78,5 +78,10 @@ return array(
                 'readOnly' => true
             ),
         ),
+        'pid' => array(
+            'config' => array(
+                'type' => 'passthrough',
+            ),
+        ),
     ),
 );

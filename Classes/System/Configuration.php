@@ -81,6 +81,11 @@ class Configuration
     const CONF_IDENTIFICATION_IDENTIFIER = 'identification_identifier';
 
     /**
+     * @var integer
+     */
+    const CONF_ENTRY_STORAGE_PID = 'entry_storage_pid';
+
+    /**
      * @var array
      */
     private $configuration = array();
@@ -177,6 +182,14 @@ class Configuration
     public function getIdentificationIdentifier()
     {
         return (integer)$this->get(self::CONF_IDENTIFICATION_IDENTIFIER);
+    }
+
+    /**
+     * @return integer
+     **/
+    public function getEntryStoragePid()
+    {
+        return (integer)$this->get(self::CONF_ENTRY_STORAGE_PID);
     }
 
     /**

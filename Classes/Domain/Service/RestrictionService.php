@@ -250,6 +250,9 @@ class RestrictionService
         $this->entry->setTstamp(time());
         $this->entry->setIdentifier($this->getClientIdentifier());
         $this->entry->setHumanReadableIdentifier($this->getHumanReadableClientIdentifier());
+        if ((int)$this->configuration->getEntryStoragePid() > 0) {
+            $this->entry->setPid((int)$this->configuration->getEntryStoragePid());
+        }
         $this->entryRepository->add($this->entry);
         $this->persistenceManager->persistAll();
         $this->clientRestricted = false;

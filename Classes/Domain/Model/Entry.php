@@ -38,6 +38,11 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Entry extends AbstractEntity
 {
     /**
+     * @var integer
+     */
+    protected $pid;
+
+    /**
      * @var string
      */
     protected $tstamp;
@@ -64,6 +69,22 @@ class Entry extends AbstractEntity
      * @validate NotEmpty
      */
     protected $failures;
+
+    /**
+     * @return int
+     */
+    public function getPid()
+    {
+        return $this->pid;
+    }
+
+    /**
+     * @param int $pid
+     */
+    public function setPid($pid)
+    {
+        $this->pid = $pid;
+    }
 
     /**
      * @param string $crdate

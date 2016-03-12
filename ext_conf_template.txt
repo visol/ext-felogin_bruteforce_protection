@@ -16,6 +16,9 @@ max_failures = 10
 # cat=clientip; type=string; label=Exclude IP´s: define a comma separated list of IP addresses that should be excluded from restriction.
 exclude_ips =
 
+# cat=basic; type=int; label=Storage PID for entries: If set, the entries will be stored on the page with this ID. Make sure that the page exists.
+entry_storage_pid = 0
+
 # cat=clientip; type=boolean; label=Use HTTP_X_FORWARDED_FOR for client ip evaluation.
 x_forwarded_for = 0
 
