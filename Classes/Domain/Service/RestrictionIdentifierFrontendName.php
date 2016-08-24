@@ -47,7 +47,7 @@ class RestrictionIdentifierFrontendName extends RestrictionIdentifierAbstract
         if (!isset($this->identifierValue)) {
             $loginFormData = $this->frontendUserAuthentication->getLoginFormData();
             if (isset($loginFormData['uname']) &&  !empty($loginFormData['uname'])) {
-                $this->identifierValue = $loginFormData['uname'];
+                $this->identifierValue = strtolower($loginFormData['uname']);
             } else {
                 $this->identifierValue = '';
             }
