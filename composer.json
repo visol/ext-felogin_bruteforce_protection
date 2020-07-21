@@ -31,7 +31,7 @@
         "phpunit/phpcov": "2.0.*",
         "squizlabs/php_codesniffer": "2.3.*",
         "sebastian/phpcpd": "2.0.*",
-        "phpmd/phpmd": "2.2.*"
+        "phpmd/phpmd": "2.4.*"
     },
     "replace": {
         "felogin_bruteforce_protection": "*"
