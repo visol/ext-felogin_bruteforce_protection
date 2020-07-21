@@ -29,7 +29,7 @@
         "typo3/cms": "6.2.*",
         "phpunit/phpunit": "4.8.*",
         "phpunit/phpcov": "2.0.*",
-        "squizlabs/php_codesniffer": "2.3.*",
+        "squizlabs/php_codesniffer": "2.9.*",
         "sebastian/phpcpd": "2.0.*",
         "phpmd/phpmd": "2.2.*"
     },
